@@ -38,3 +38,7 @@ out the [prodigenr](https://rostools.github.io/prodigenr) online
 documentation.
 
 Rostools teaching R
+Adding more
+
+
+usethis::use
