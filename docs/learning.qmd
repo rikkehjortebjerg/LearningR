@@ -1,0 +1,43 @@
+---
+title: "Reproducible Document"
+author: "rostools" 
+format: html
+editor: visual
+---
+
+```{r setup}
+library(tidyverse)
+```
+
+
+## Writing R code
+
+2+2
+
+```{r}
+2+2
+```
+
+```{r}
+2+2
+```
+### Header2
+
+- Day
+- Night
+
+## About me
+
+1. Rikke Hjortebjerg
+2. University of Southern Denmark 
+3. **Denmark** 
+
+## **Simple code**
+
+```{r}
+3*3
+```
+
+## Testing for Git
+
+We tested things for Git
