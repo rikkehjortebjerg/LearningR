@@ -2,7 +2,7 @@ TODO: Add more to the title of your project here
 
 # LearningR:
 
-We are checking if it works
+Yes it did!
 
 TODO: Give a brief description of what your project is about
 
