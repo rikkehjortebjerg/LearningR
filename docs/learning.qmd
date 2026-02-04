@@ -7,20 +7,10 @@ editor: visual
 
 ```{r setup}
 library(tidyverse)
+
+post_meal_data <- read.csv2(here::here("data/post-meal-insulin.csv"))
 ```
 
-
-## Writing R code
-
-2+2
-
-```{r}
-2+2
-```
-
-```{r}
-2+2
-```
 ### Header2
 
 - Day
@@ -35,9 +25,11 @@ library(tidyverse)
 ## **Simple code**
 
 ```{r}
-3*3
+
 ```
+## Showing the data
+```{r}
+post_meal_data
 
-## Testing for Git
-
-We tested things for Git
+glimpse(post_meal_data)
+```
