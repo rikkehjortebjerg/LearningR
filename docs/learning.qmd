@@ -101,17 +101,6 @@ ggplot(post_meal_data, aes(x = glykemi)) +
 ## Plotting two continuous variables
 
 ```{r}
-ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
-  geom_point()
-```
-
-```{r}
-ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
-  geom_point() +
-  geom_smooth()
-```
-
-```{r}
 #| fig-cap: "Scatterplot of BMI and the area under the curve for glucose."
 #| label: fig-bmi-auc-pg
 ggplot(post_meal_data, aes(x = BMI, y = auc_pg)) +
