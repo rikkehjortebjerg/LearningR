@@ -27,7 +27,6 @@ post_meal_data <- read.csv2(here::here("data/post-meal-insulin.csv"))
 ## **Simple code**
 
 ```{r}
-
 ```
 ## Showing the data
 ```{r}
@@ -42,7 +41,7 @@ ggplot(post_meal_data, aes(x = BMI)) + geom_histogram()
 ```{r}
 #| fig-cap: "Distribution of BMI"
 #| label: fig-bmi-histo
-ggplot(post_meal_data, aes(x = BMI)) + 
+ggplot(post_meal_data, aes(x = BMI)) +
   geom_histogram()
 ```
 
