@@ -248,7 +248,7 @@ tidied_post_meal_data |>
 ```{r}
 tidied_post_meal_data |>
   filter(BMI < 30) |>
-  ggplot(aes(x = Age, y = auc_insulin, colour = Group)) +
+  ggplot(aes(x = Age, y = insulin_glucose_ratio, colour = Group)) +
   geom_point()
 ```
 
@@ -256,7 +256,7 @@ tidied_post_meal_data |>
 tidied_post_meal_data |>
   filter(BMI < 30) |>
   mutate(young = if_else(Age < 40, "Young", "Old")) |>
-  ggplot(aes(x = Age, y = auc_insulin, colour = Group)) +
+  ggplot(aes(x = Age, y = insulin_glucose_ratio, colour = Group)) +
   geom_point() +
   facet_grid(cols = vars(young))
 ```
@@ -264,7 +264,7 @@ tidied_post_meal_data |>
 tidied_post_meal_data |>
   filter(BMI < 30) |>
   mutate(young = if_else(Age < 40, "Young", "Old")) |>
-  ggplot(aes(x = BMI, y = auc_insulin, colour = Group)) +
+  ggplot(aes(x = BMI, y = insulin_glucose_ratio, colour = Group)) +
   geom_point() +
   facet_grid(rows = vars(young)) +
   labs(
