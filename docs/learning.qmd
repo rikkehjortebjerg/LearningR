@@ -369,3 +369,17 @@ tidied_post_meal_data |>
   ungroup() |>
   knitr::kable()
 ```
+
+
+## Renaming variables
+
+```{r}
+tidied_post_meal_data |>
+  group_by(Group) |>
+  summarise(
+    "Mean Age (yrs)" = round(mean(Age), 1),
+    "Mean BMI (kg/m^2^)" = round(mean(BMI), 1)
+  ) |>
+  ungroup() |>
+  knitr::kable()
+```
