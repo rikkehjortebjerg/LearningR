@@ -217,3 +217,58 @@ tidier_post_meal_data |>
     Group = if_else(Group == "CTR", "Control", "First-degree relative")
   )
 ```
+
+
+## Practice with filter and mutate
+
+```{r}
+# Task 1.
+post_meal_data |>
+  filter(BMI >= 25 & BMI <= 49 & Group == "FDR")
+```
+```{r}
+# Task 2.
+post_meal_data |>
+  mutate(percent_body_fat = (Fat.mass.DXA / Weight) * 100) |>
+  filter(percent_body_fat > 30)
+```
+
+
+## Visualizing with a jitter plot
+
+```{r}
+tidied_post_meal_data |>
+  mutate(overweight = if_else(BMI >= 25, "Overweight", "Not overweight")) |>
+  ggplot(aes(x = overweight, y = insulin_glucose_ratio)) +
+  geom_violin() +
+  geom_jitter()
+```
+
+## Plotting three or more variables
+```{r}
+tidied_post_meal_data |>
+  filter(BMI < 30) |>
+  ggplot(aes(x = Age, y = auc_insulin, colour = Group)) +
+  geom_point()
+```
+
+```{r}
+tidied_post_meal_data |>
+  filter(BMI < 30) |>
+  mutate(young = if_else(Age < 40, "Young", "Old")) |>
+  ggplot(aes(x = Age, y = auc_insulin, colour = Group)) +
+  geom_point() +
+  facet_grid(cols = vars(young))
+```
+```{r}
+tidied_post_meal_data |>
+  filter(BMI < 30) |>
+  mutate(young = if_else(Age < 40, "Young", "Old")) |>
+  ggplot(aes(x = BMI, y = auc_insulin, colour = Group)) +
+  geom_point() +
+  facet_grid(rows = vars(young)) +
+  labs(
+    x = "Body mass indes (BMI)",
+    y = "Insulin to glucose ratio"
+  )
+```
